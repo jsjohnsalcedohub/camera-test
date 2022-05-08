@@ -14,8 +14,7 @@ function cameraStart() {
         .getUserMedia(constraints)
         .then(function(stream) {
             track = stream.getTracks()[0];
-	    cameraView.style.webkitTransform = "scaleX(-1)"; 
-            cameraView.style.transform = "scaleX(-1)";	 
+	    
             cameraView.srcObject = stream;	    
         })
         .catch(function(error) {
