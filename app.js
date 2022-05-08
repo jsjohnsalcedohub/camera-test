@@ -13,9 +13,10 @@ function cameraStart() {
     navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function(stream) {
-            track = stream.getTracks()[0];
-	    
-            cameraView.srcObject = stream;	    
+            track = stream.getTracks()[0]	    
+            cameraView.srcObject = stream;
+	    cameraView.style.webkitTransform = "scaleX(-1)"; 
+            cameraView.style.transform = "scaleX(-1)";
         })
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
